@@ -52,6 +52,20 @@ public class Main {
             }
         }
     }
+    private static void indexSalary(){
+        int index = 12;
+        int salary = 0;
+        int indexSalary = 0;
+        String employee = null;
+        for (Employee element : arrEmployee) {
+            if (element.getSalary() > salary){
+                salary = ((element.getSalary() /100) * index) ;
+                indexSalary = salary + element.getSalary();
+                employee = element.getName();
+            }
+            System.out.println("Зарплата после индексации на " + index + "%" + " составила " + employee + " " + indexSalary + "руб.");
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -71,6 +85,7 @@ public class Main {
         employeeMinSalary();
         employeeMaxSalary();
         nameList();
+        indexSalary();
 
 
     }
